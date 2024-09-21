@@ -36,8 +36,7 @@ for submission in reddit.subreddit("ai+technology+politics").hot(limit=1000):
         "score":submission.score,
         "num_comments": submission.num_comments,
         "created_utc": submission.created_utc,
-        "url":submission.url,
-        "selftext": submission.selftext
+        "url":submission.url
     })
 
 print('Data extraction completed!')
@@ -45,5 +44,5 @@ print('Data extraction completed!')
 df = pd.DataFrame(data)
 
 # Save the extracted data into a csv file
-df.to_csv('../data/extracted_reddit.csv')
+df.to_csv('../data/extracted_reddit.csv', index=False)
 
